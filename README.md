@@ -130,6 +130,8 @@ The client and the MCP server are free and MIT licensed. The Actor is **paid per
 
 ## Use it as an MCP server
 
+[![Google Jobs MCP server – quality and maintenance score on Glama](https://glama.ai/mcp/servers/datalumehq/google-jobs-scraper/badges/score.svg)](https://glama.ai/mcp/servers/datalumehq/google-jobs-scraper)
+
 `mcp_server.py` exposes three tools to any MCP client (Claude Desktop, Claude Code, Cursor, VS Code). Requires Python 3.10+.
 
 | Tool | Cost | What it returns |
