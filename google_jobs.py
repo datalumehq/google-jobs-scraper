@@ -144,6 +144,10 @@ def main(argv=None):
     p.add_argument("--max-charge", type=float, default=0.25, help="spending cap for this run in USD (default 0.25)")
     p.add_argument("--csv", metavar="FILE", help="write CSV instead of printing JSON")
     a = p.parse_args(argv)
+    # Windows consoles default to a legacy code page (e.g. cp949, cp1252) that cannot print emoji
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(encoding="utf-8", errors="replace")
     try:
         run_input = build_input(a.query, a.location, a.country, a.language, a.date, a.type,
                                 a.remote, a.coverage, 100, a.max_jobs)
